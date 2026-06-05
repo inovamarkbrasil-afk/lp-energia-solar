@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Estrutura completa de captação de leads para empresas de energia solar: tráfego pago no Meta, landing page de alta conversão e CRM com leads automáticos. Sem fidelidade." />
+  <title>Rafael Dickel — Estrutura de Captação para Empresas Solares</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1530085092233290');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1530085092233290&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- O evento de conversão (fbq('track', 'Lead')) é disparado no clique
+       dos botões de WhatsApp pela função handleWhatsAppClick() em script.js,
+       com blindagem anti-duplicidade (dispara só uma vez por sessão). -->
+
+  <!-- Fontes: Cal Sans (títulos/destaques) + Inter (subtextos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================ -->
+  <!-- 1. NAVBAR                    -->
+  <!-- ============================ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#hero" class="navbar__logo">Rafael <span>Dickel</span></a>
+
+      <nav class="navbar__nav" id="navMenu">
+        <a href="#comparativo" class="navbar__link">Resultados</a>
+        <a href="#solucao" class="navbar__link">Solução</a>
+        <a href="#oferta" class="navbar__link">Oferta</a>
+      </nav>
+
+      <button class="btn btn--wpp navbar__cta" data-wpp>
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar no WhatsApp
+      </button>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================ -->
+  <!-- 2. HERO                      -->
+  <!-- ============================ -->
+  <section class="hero" id="hero">
+    <!-- Vídeo de fundo (esmaecido) -->
+    <video class="hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="assets/video-back.mp4" type="video/mp4" />
+    </video>
+    <div class="hero__video-overlay"></div>
+
+    <div class="hero__glow"></div>
+    <div class="container hero__inner">
+
+      <!-- Tagline: 5 anos + ícone de sol -->
+      <p class="hero__tagline reveal">
+        <svg class="hero__sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="4.2" fill="currentColor" />
+          <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="1.5" x2="12" y2="4" />
+            <line x1="12" y1="20" x2="12" y2="22.5" />
+            <line x1="1.5" y1="12" x2="4" y2="12" />
+            <line x1="20" y1="12" x2="22.5" y2="12" />
+            <line x1="4.3" y1="4.3" x2="6" y2="6" />
+            <line x1="18" y1="18" x2="19.7" y2="19.7" />
+            <line x1="19.7" y1="4.3" x2="18" y2="6" />
+            <line x1="6" y1="18" x2="4.3" y2="19.7" />
+          </g>
+        </svg>
+        Já são 5 anos prestando serviços para o setor solar
+      </p>
+
+      <!-- Carrosséis de logos de empresas atendidas -->
+      <div class="logos reveal" aria-label="Empresas que já atendi">
+        <div class="logos__row">
+          <div class="logos__track">
+            <div class="logos__item"><img src="assets/logo-1.png" alt="Empresa 1" /></div>
+            <div class="logos__item"><img src="assets/logo-2.png" alt="Empresa 2" /></div>
+            <div class="logos__item"><img src="assets/logo-3.png" alt="Empresa 3" /></div>
+            <div class="logos__item"><img src="assets/logo-4.png" alt="Empresa 4" /></div>
+            <div class="logos__item"><img src="assets/logo-5.png" alt="Empresa 5" /></div>
+            <div class="logos__item"><img src="assets/logo-6.png" alt="Empresa 6" /></div>
+            <div class="logos__item"><img src="assets/logo-7.png" alt="Empresa 7" /></div>
+            <!-- duplicado para loop contínuo -->
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-1.png" alt="" /></div>
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-2.png" alt="" /></div>
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-3.png" alt="" /></div>
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-4.png" alt="" /></div>
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-5.png" alt="" /></div>
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-6.png" alt="" /></div>
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-7.png" alt="" /></div>
+          </div>
+        </div>
+
+        <div class="logos__row">
+          <div class="logos__track logos__track--reverse">
+            <div class="logos__item"><img src="assets/logo-8.png" alt="Empresa 8" /></div>
+            <div class="logos__item"><img src="assets/logo-9.png" alt="Empresa 9" /></div>
+            <div class="logos__item"><img src="assets/logo-10.png" alt="Empresa 10" /></div>
+            <div class="logos__item"><img src="assets/logo-11.png" alt="Empresa 11" /></div>
+            <div class="logos__item"><img src="assets/logo-12.png" alt="Empresa 12" /></div>
+            <div class="logos__item"><img src="assets/logo-13.png" alt="Empresa 13" /></div>
+            <div class="logos__item"><img src="assets/logo-14.png" alt="Empresa 14" /></div>
+            <!-- duplicado para loop contínuo -->
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-8.png" alt="" /></div>
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-9.png" alt="" /></div>
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-10.png" alt="" /></div>
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-11.png" alt="" /></div>
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-12.png" alt="" /></div>
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-13.png" alt="" /></div>
+            <div class="logos__item" aria-hidden="true"><img src="assets/logo-14.png" alt="" /></div>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="hero__title reveal">
+        Sua empresa solar merece uma parceria que traz
+        <span class="text-gradient">leads de verdade!</span>
+      </h1>
+
+      <p class="hero__subtitle reveal">
+        Eu entrego uma estrutura completa: anúncios no Meta, landing page de
+        alta conversão e um CRM onde cada lead cai automaticamente. Você foca
+        em fechar. Eu cuido da captação!
+      </p>
+
+      <!-- Bloco de preço -->
+      <div class="hero__price reveal">
+        <span class="price__old">R$1.497,90</span>
+        <span class="price__new">Por apenas <strong>R$747,90</strong>/mês</span>
+        <span class="price__note">Contrato de 30 dias, sem fidelidade</span>
+      </div>
+
+      <button class="btn btn--primary btn--lg reveal" data-wpp>
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quero minha estrutura de captação
+      </button>
+
+      <!-- Cronômetro -->
+      <div class="countdown reveal">
+        <p class="countdown__label">Preço promocional encerra em:</p>
+        <div class="countdown__grid" id="countdown">
+          <div class="countdown__card">
+            <span class="countdown__num" id="cd-days">00</span>
+            <span class="countdown__unit">Dias</span>
+          </div>
+          <div class="countdown__card">
+            <span class="countdown__num" id="cd-hours">00</span>
+            <span class="countdown__unit">Horas</span>
+          </div>
+          <div class="countdown__card">
+            <span class="countdown__num" id="cd-minutes">00</span>
+            <span class="countdown__unit">Minutos</span>
+          </div>
+          <div class="countdown__card">
+            <span class="countdown__num" id="cd-seconds">00</span>
+            <span class="countdown__unit">Segundos</span>
+          </div>
+        </div>
+        <p class="countdown__ended" id="countdownEnded" hidden>Promoção encerrada</p>
+      </div>
+
+      <!-- Badges -->
+      <ul class="hero__badges reveal">
+        <li class="badge">✓ Tráfego pago completo</li>
+        <li class="badge">✓ Landing page de alta conversão</li>
+        <li class="badge">✓ CRM com leads automáticos</li>
+        <li class="badge">✓ Acompanhamento próximo</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- ============================ -->
+  <!-- QUEM SOU EU                  -->
+  <!-- ============================ -->
+  <section class="section section--alt" id="sobre">
+    <div class="container about">
+      <div class="about__photo reveal">
+        <img src="assets/rafael.png" alt="Rafael Dickel" class="about__img" />
+      </div>
+
+      <div class="about__content reveal">
+        <h2 class="section__title section__title--left">
+          Sou <span class="text-gradient">Rafael Dickel.</span>
+        </h2>
+        <p class="about__text">
+          Trabalho com marketing há 5 anos e já atendi mais de 400 empresas no
+          Brasil. Hoje uno anúncios, programação e automações para criar
+          estruturas de captação que funcionam de verdade — não só no papel.
+        </p>
+        <span class="about__badge">+400 empresas atendidas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ -->
+  <!-- 3. PROBLEMA                  -->
+  <!-- ============================ -->
+  <section class="section" id="problema">
+    <div class="container">
+      <h2 class="section__title reveal">
+        O problema não é falta de leads.
+        <span class="text-gradient">É falta de estrutura de qualificação.</span>
+      </h2>
+
+      <ul class="problem__list">
+        <li class="problem__item reveal">
+          <span class="icon-x">✗</span>
+          Você tem um bom serviço, mas ainda depende de indicação
+        </li>
+        <li class="problem__item reveal">
+          <span class="icon-x">✗</span>
+          Quando anuncia, não sabe se está gerando resultado real
+        </li>
+        <li class="problem__item reveal">
+          <span class="icon-x">✗</span>
+          Os leads chegam pelo WhatsApp e se perdem no meio da conversa
+        </li>
+        <li class="problem__item reveal">
+          <span class="icon-x">✗</span>
+          Não tem uma estrutura que trabalhe enquanto você foca em fechar contratos
+        </li>
+        <li class="problem__item reveal">
+          <span class="icon-x">✗</span>
+          Já tentou agência e ficou na promessa
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================ -->
+  <!-- 4. SOLUÇÃO                   -->
+  <!-- ============================ -->
+  <section class="section section--alt" id="solucao">
+    <div class="container">
+      <h2 class="section__title reveal">
+        Uma estrutura completa de captação para o
+        <span class="text-gradient">mercado solar.</span>
+      </h2>
+
+      <div class="cards">
+        <article class="card reveal">
+          <span class="card__num">01</span>
+          <h3 class="card__title">Anúncios no Meta</h3>
+          <p class="card__text">
+            Campanhas criadas e geridas para atrair proprietários com perfil de
+            compra para energia solar. Otimização contínua para baixar o CPL.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__num">02</span>
+          <h3 class="card__title">Landing Page de Alta Conversão</h3>
+          <p class="card__text">
+            Página criada do zero com foco em converter o visitante em lead.
+            Argumentos certos, gatilhos certos, botão certo.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__num">03</span>
+          <h3 class="card__title">CRM com Leads Automáticos</h3>
+          <p class="card__text">
+            Cada lead que chega pela página cai automaticamente no CRM. Nada se
+            perde. Você acompanha tudo num painel organizado.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ -->
+  <!-- 5. COMPARATIVO               -->
+  <!-- ============================ -->
+  <section class="section" id="comparativo">
+    <div class="container">
+      <h2 class="section__title reveal">
+        Agência comum entrega campanha.
+        <span class="text-gradient">Essa estrutura entrega lead organizado.</span>
+      </h2>
+
+      <div class="compare reveal">
+        <table class="compare__table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Agência comum</th>
+              <th class="compare__col-highlight">Minha estrutura</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="">O que entrega</td>
+              <td data-label="Agência comum">Só sobe campanha</td>
+              <td data-label="Minha estrutura" class="compare__col-highlight">Tráfego + LP + CRM</td>
+            </tr>
+            <tr>
+              <td data-label="">Contato</td>
+              <td data-label="Agência comum">Pouco contato</td>
+              <td data-label="Minha estrutura" class="compare__col-highlight">Acompanhamento próximo</td>
+            </tr>
+            <tr>
+              <td data-label="">Relatório</td>
+              <td data-label="Agência comum">Genérico, mensal</td>
+              <td data-label="Minha estrutura" class="compare__col-highlight">Feedbacks diários</td>
+            </tr>
+            <tr>
+              <td data-label="">Leads</td>
+              <td data-label="Agência comum">Perdidos no WhatsApp</td>
+              <td data-label="Minha estrutura" class="compare__col-highlight">Organizados no CRM</td>
+            </tr>
+            <tr>
+              <td data-label="">Contrato</td>
+              <td data-label="Agência comum">6 a 12 meses</td>
+              <td data-label="Minha estrutura" class="compare__col-highlight">Apenas 30 dias</td>
+            </tr>
+            <tr>
+              <td data-label="">Preço</td>
+              <td data-label="Agência comum">Mais de R$1.000,00</td>
+              <td data-label="Minha estrutura" class="compare__col-highlight">Apenas R$747,90</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ -->
+  <!-- 7. OFERTA                    -->
+  <!-- ============================ -->
+  <section class="section" id="oferta">
+    <div class="container">
+      <div class="offer reveal">
+        <h2 class="section__title">
+          Estrutura completa para o mercado solar —
+          <span class="text-gradient">por 30 dias, sem vínculo.</span>
+        </h2>
+
+        <ul class="offer__list">
+          <li><span class="icon-check">✅</span> Gestão de tráfego pago (Meta Ads)</li>
+          <li><span class="icon-check">✅</span> Landing page de alta conversão</li>
+          <li><span class="icon-check">✅</span> CRM com entrada automática de leads</li>
+          <li><span class="icon-check">✅</span> Acompanhamento próximo e feedbacks diários</li>
+          <li><span class="icon-check">✅</span> Otimizações semanais nas campanhas</li>
+          <li><span class="icon-check">✅</span> Sem contrato de fidelidade</li>
+        </ul>
+
+        <div class="offer__price">
+          <span class="price__old">R$1.497,90</span>
+          <span class="price__new"><strong>R$747,90</strong>/mês</span>
+          <span class="price__obs">Verba de anúncios paga separadamente</span>
+        </div>
+
+        <button class="btn btn--primary btn--lg" data-wpp>
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Quero minha estrutura de captação
+        </button>
+
+        <p class="offer__subcta">Oferta válida até 30/06. Vagas limitadas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ -->
+  <!-- 8. FAQ                       -->
+  <!-- ============================ -->
+  <section class="section section--alt" id="faq">
+    <div class="container container--narrow">
+      <h2 class="section__title reveal">Perguntas frequentes</h2>
+
+      <div class="faq">
+        <details class="faq__item reveal">
+          <summary>Preciso ter experiência com anúncios?</summary>
+          <p>Não. Eu cuido de tudo.</p>
+        </details>
+        <details class="faq__item reveal">
+          <summary>A landing page está inclusa?</summary>
+          <p>Sim, criada do zero para o mercado solar.</p>
+        </details>
+        <details class="faq__item reveal">
+          <summary>O CRM está incluso?</summary>
+          <p>Sim. Os leads caem automaticamente no painel.</p>
+        </details>
+        <details class="faq__item reveal">
+          <summary>O valor inclui verba de anúncios?</summary>
+          <p>Não. Os R$747,90 são de gestão e estrutura. A verba é sua.</p>
+        </details>
+        <details class="faq__item reveal">
+          <summary>Tem fidelidade?</summary>
+          <p>Não. São 30 dias. Se gostar, renova.</p>
+        </details>
+        <details class="faq__item reveal">
+          <summary>Para quem é essa oferta?</summary>
+          <p>Para integradores e revendedores de energia solar que querem captação previsível.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ -->
+  <!-- 9. CTA FINAL                 -->
+  <!-- ============================ -->
+  <section class="section final-cta">
+    <div class="final-cta__glow"></div>
+    <div class="container reveal">
+      <h2 class="section__title">
+        Pronto para ter uma estrutura que traz lead
+        <span class="text-gradient">enquanto você fecha contrato?</span>
+      </h2>
+      <button class="btn btn--primary btn--lg" data-wpp>
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Me chama no WhatsApp agora
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================ -->
+  <!-- 10. FOOTER                   -->
+  <!-- ============================ -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Rafael Dickel. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
