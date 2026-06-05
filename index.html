@@ -16,6 +16,10 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
+  // Desativa a deteccao automatica de eventos do Pixel (autoConfig).
+  // Sem isto, o Pixel infere eventos pelo texto dos botoes e dispara
+  // sozinho "SubscribedButton", "Lead", etc. Precisa vir ANTES do init.
+  fbq('set', 'autoConfig', false, '1530085092233290');
   fbq('init', '1530085092233290');
   fbq('track', 'PageView');
   </script>
@@ -24,9 +28,10 @@
   /></noscript>
   <!-- End Meta Pixel Code -->
 
-  <!-- O evento de conversão (fbq('track', 'Lead')) é disparado no clique
-       dos botões de WhatsApp pela função handleWhatsAppClick() em script.js,
-       com blindagem anti-duplicidade (dispara só uma vez por sessão). -->
+  <!-- Os eventos de conversão (fbq('track','Contact') e
+       fbq('trackCustom','WhatsAppClick')) são disparados no clique dos
+       botões de WhatsApp pela função handleWhatsAppClick() em script.js,
+       com guarda anti-duplicidade. -->
 
   <!-- Fontes: Cal Sans (títulos/destaques) + Inter (subtextos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
