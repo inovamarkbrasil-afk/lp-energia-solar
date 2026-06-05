@@ -10,43 +10,56 @@
      CONFIGURAÇÕES
      ============================================================ */
   // Número e mensagem do WhatsApp (todos os CTAs usam o mesmo link)
-  var WHATSAPP_URL =
-    "https://wa.me/5547991795018?text=Ol%C3%A1%2C%20Rafael%21%20Vim%20da%20LP%20Solar%20e%20quero%20saber%20mais%20sobre%20a%20estrutura%20de%20capta%C3%A7%C3%A3o.";
+  const WHATSAPP_URL =
+    "https://wa.me/5547991795018?text=Rafael%2C%20tenho%20uma%20empresa%20de%20energia%20solar%20e%20quero%20ter%20a%20sua%20estrutura%20de%20capta%C3%A7%C3%A3o%20completa%21";
 
   // Data-alvo do cronômetro regressivo (ano/mês-1/dia, hora, min, seg)
   // OBS: mês é 0-indexado no JS -> 5 = junho.
   var COUNTDOWN_TARGET = new Date(2026, 5, 30, 23, 59, 59);
 
   /* ============================================================
-     PIXEL DO FACEBOOK — BLINDAGEM DE CONVERSÃO
-     O evento de Lead dispara no clique do WhatsApp, uma única
-     vez por sessão (flag anti-duplicidade).
+     META PIXEL — RASTREAMENTO DO CLIQUE NO WHATSAPP
+     A cada clique REAL em um botão de WhatsApp dispara:
+       fbq('track', 'Contact')             -> evento padrão
+       fbq('trackCustom', 'WhatsAppClick') -> evento personalizado
+     Regras:
+       - Nada dispara no carregamento da página (só no clique).
+       - Todos os botões [data-wpp] disparam.
+       - Uma vez por clique: uma guarda de tempo curta ignora apenas
+         o disparo duplicado do MESMO toque (ghost click no mobile),
+         sem bloquear cliques reais posteriores.
+       - PageView e init permanecem no <head> (não são tocados aqui).
      ============================================================ */
-  var leadFired = false;
+  const DEDUPE_WINDOW_MS = 600;
+  let lastTrackedAt = 0;
+
+  function trackWhatsAppClick() {
+    const now = Date.now();
+    // Evita duplicidade do mesmo clique/toque (mobile dispara 2x às vezes)
+    if (now - lastTrackedAt < DEDUPE_WINDOW_MS) return;
+    lastTrackedAt = now;
+
+    // Compatível com o Pixel já existente; só dispara se o fbq carregou
+    if (typeof window.fbq === "function") {
+      window.fbq("track", "Contact");
+      window.fbq("trackCustom", "WhatsAppClick");
+    }
+  }
 
   function handleWhatsAppClick(event) {
     if (event) event.preventDefault();
 
-    // (1) verifica o flag anti-duplicidade
-    if (!leadFired) {
-      // (2) dispara o evento de Lead, se o Pixel estiver carregado
-      if (typeof fbq === "function") {
-        fbq("track", "Lead");
-      }
-      // (3) seta o flag para não disparar novamente nesta sessão
-      leadFired = true;
-    }
+    // 1) dispara os eventos ANTES de navegar, para não perdê-los
+    trackWhatsAppClick();
 
-    // (4) abre o link do WhatsApp
+    // 2) abre o WhatsApp (funciona em desktop e mobile)
     window.open(WHATSAPP_URL, "_blank", "noopener");
   }
 
-  // Liga todos os botões marcados com [data-wpp] à mesma função
+  // Liga TODOS os botões de WhatsApp ([data-wpp]) ao mesmo handler.
   function bindWhatsAppButtons() {
-    var buttons = document.querySelectorAll("[data-wpp]");
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener("click", handleWhatsAppClick);
-    }
+    const buttons = document.querySelectorAll("[data-wpp]");
+    buttons.forEach((btn) => btn.addEventListener("click", handleWhatsAppClick));
   }
 
   /* ============================================================
